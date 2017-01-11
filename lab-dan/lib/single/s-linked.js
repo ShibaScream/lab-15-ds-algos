@@ -80,3 +80,33 @@ SinglyLinkedList.prototype.print = function() {
   }
   console.log(string)
 }
+
+SinglyLinkedList.prototype.insert = function(val, n) {
+  let newNode = new Node(val)
+  let currentNode = this.head
+  let temp = null
+
+  if (currentNode === null) {
+    this.head = newNode
+    return newNode.value
+  }
+
+  if (n <= 0) {
+    newNode.next = this.head
+    this.head = newNode
+    return newNode.value
+  }
+
+  for (let i = 0; i < n - 1; i++) {
+    currentNode = currentNode.next
+
+    if (currentNode.next === null) {
+      break
+    }
+  }
+
+  temp = currentNode.next
+  currentNode.next = newNode
+  newNode.next = temp
+  return newNode.value
+}

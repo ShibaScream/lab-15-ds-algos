@@ -35,6 +35,10 @@ This method loops through the list until it finds the second to last node, remov
 sll.print()
 ```
 Pretty print the list in its current state
+```
+sll.insert(val, n)
+```
+This method allows you to insert a node with provided value at the nth position. If the n is beyond the length of list, the node will be inserted at the end of the list. If n is 0 or negative integer or the list is empty, the node is inserted at the head. 
 
 ###Doubly-linked Lists
 ```
